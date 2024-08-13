@@ -8,6 +8,7 @@ import phoneIcon from "./img/phone.svg";
 import emailIcon from "./img/email.svg";
 import footerMe from "./img/footerMe.jpg";
 
+import memoryCard from "./img/memory-card.png";
 import cvApplication from "./img/cv-application.png";
 import weatherApp from "./img/weather-app.png";
 import toDoList from "./img/to-do-list.png";
@@ -31,6 +32,7 @@ document.querySelector('.footerMe').src = footerMe;
 document.querySelector('.phone').src = phoneIcon;
 document.querySelector('.email').src = emailIcon;
 
+document.querySelector('#memory-card').src = memoryCard;
 document.querySelector('#cv-application').src = cvApplication;
 document.querySelector('#weather-app').src = weatherApp;
 document.querySelector('#to-do-list').src = toDoList;
