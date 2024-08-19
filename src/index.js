@@ -1,4 +1,5 @@
 import './style.css';
+import menuIcon from "./img/menu.svg";
 import headerMe from "./img/headerMe.jpg";
 import githubIcon from "./img/github.svg";
 import linkedinIcon from "./img/linkedin.svg";
@@ -22,6 +23,25 @@ import calculator from "./img/calculator.png";
 import etchASketch from "./img/etch-a-sketch.png";
 import rockPaperScissors from "./img/rock-paper-scissors.png";
 import landingPage from "./img/landing-page.png";
+
+document.querySelector('.menu').src = menuIcon;
+const dropdownContainer = document.querySelector(".dropdown-container");
+
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+document.querySelector(".menu").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) {
+    dropdownMenu.classList.toggle("visible");
+  }  
+})
+
+window.addEventListener("click", (e) => {
+  if (!dropdownContainer.contains(e.target)) {
+    dropdownMenu.classList.remove("visible")
+  }
+})
+
+
 
 document.querySelectorAll('.headerMe').forEach(img => img.src = headerMe);
 document.querySelectorAll('.github').forEach(img => img.src = githubIcon);

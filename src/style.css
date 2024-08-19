@@ -1,17 +1,78 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: lightGray;
+}
+
+.menu {
+    cursor: pointer;
+    width: 2.5rem;
+    padding: 0.5rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: lightGray;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-menu.visible {
+    display: block;
+    transform-origin: top;
+    animation: expand 500ms ease-in-out;
+}
+
+@keyframes expand {
+    0% {
+      transform: scaleY(0);
+    }
+    70% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+}
+
+.dropdown-menu li {
+    text-align: center;
+    cursor: pointer;
+    padding: 2rem;
+    text-decoration: none;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropdown-menu li:hover {
+    opacity: 0.5;
+}
+
 
 .headerMe, .footerMe {
     max-width: 70vw;
 }
 
 header {
-    background-color: lightblue;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 5rem;
-    background: linear-gradient(170deg, lightblue 70%, white 30%);
+    background: linear-gradient(170deg, rgb(48, 78, 117) 70%, white 30%);
     font-size: 1.5rem;
 }
 
@@ -102,11 +163,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(79, 166, 224);
+    background-color: rgb(35, 163, 202);
     color: white;
     padding: 2rem;
     font-size: 1.5rem;
     gap: 2rem;
+    margin-top: 5rem;
     
 }
 
@@ -141,7 +203,7 @@ footer {
 
     .name {
         top: 0;
-        transform: translateX(80%);
+        transform: translateX(70%);
         background-color: transparent;
         text-align: right;
     }
@@ -160,6 +222,23 @@ footer {
 }
 
 @media (min-width: 1000px) {
+    .dropdown-container {
+        position: relative;
+        display: block;
+    }
+    
+    .dropdown-menu {
+        display: flex;
+        justify-content: right;
+        position: static;
+        gap: 1rem;
+        width: 100%
+    }
+    
+    .menu {
+        display: none;
+    }
+
     header, footer {
         flex-direction: row;
         align-items: center;
@@ -191,7 +270,7 @@ footer {
 
     footer {
         gap: 2rem;
-        background-color: rgb(79, 166, 224);
+        background-color: rgb(35, 163, 202);
     }
 
     footer > .contactContainer > .socials {
