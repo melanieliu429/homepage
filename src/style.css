@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('./SourceSerif.ttf') format('truetype');
+  }
+
 html {
     scroll-behavior: smooth;
+    font-family: "SourceSerif", sans-serif;
 }
 
 .dropdown-container {
